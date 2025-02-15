@@ -17,8 +17,8 @@ An SQL-based library database system for managing books, borrowers, transactions
 Meet our team: [Team Profiles](TEAM.md)  
 
 ## 📂 Repository Structure  
-- **Meeting Logs:** [logs/meeting_logs.md](logs/meeting_logs.md)  
-- **Project Plan:** [docs/project_plan.md](docs/project_plan.md)  
+- **Meeting Logs:** [logs](logs/)  
+- **Team Vision and Project Scope:** [docs](docs/)  
 - **SQL Scripts:** [sql/schema.sql](sql/schema.sql)  
 
 ## 🔗 Getting Started  
