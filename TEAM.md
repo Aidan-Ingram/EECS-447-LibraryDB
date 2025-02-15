@@ -1,4 +1,4 @@
-# 💼 Team Profiles
+# 👥 Team Profiles
 
 Below are the profiles of our team members:
 
