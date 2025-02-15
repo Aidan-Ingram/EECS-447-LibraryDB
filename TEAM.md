@@ -33,6 +33,25 @@ Below are the profiles of our team members:
 
 ---
 
+## Sanketh Reddy
+
+- **Project Role**:  
+  - Database Developer
+- **Contact Information**:  
+  - Email: [sankethreddy77@ku.edu](mailto:sankethreddy77@ku.edu)  
+- **Availability**:  
+  - Friday | 9:00 - 5:00 PM CST
+  - Saturday | 3:00 - 6:00 PM CST
+- **Computing Platform Experience**:  
+  - Windows
+  - Linux
+  - MacOS
+- **Programming Language Knowledge**:  
+  - Python
+  - C, C++
+ 
+---
+
 *Next member here. Continue the syntax down!*
 
 ---
