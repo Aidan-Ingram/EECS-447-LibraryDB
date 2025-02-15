@@ -30,6 +30,29 @@ Below are the profiles of our team members:
   - Lua
   - Haskell
 
+---
+
+## Harry Ahrenholtz
+<img src="/images/harry_ahrenholtz.jpg" width="15%" />
+
+- **Project Role**:  
+  - TBD
+- **Contact Information**:  
+  - Email: [hahrenholtz@ku.edu](mailto:hahrenholtz@ku.edu)  
+  - Phone: (913) 957-2137
+- **Availability**:  
+  - Working hours: MWF | 09:00 - 17:00
+  - Time zone: CST (Chicago)
+- **Computing Platform Experience**:  
+  - Windows
+  - Linux
+  - MacOS
+- **Programming Language Knowledge**:  
+  - Python
+  - TS, JS
+  - C, C++
+  - Java, NodeJS
+  - Haskell
 
 ---
 
