@@ -1,4 +1,4 @@
-# 📚 Library Database System
+# 📚 Team SQLibrary
 
 ## 🚀 Overview
 An SQL-based library database system for managing books, borrowers, transactions, and overdue tracking. 
