@@ -1,0 +1,3 @@
+The goal of this project is to develop a Library Management System to efficiently manage a small library's collection, track memberships, enforce borrowing rules, and generate insightful reports.
+We will create a database that works as an modular, smaller way to process data for small library's who have been largely paper-focused since their inception. Our database is intended
+to make the quality of life of librarians and library users better, in a small-scale environment. This system will improve the borrowing and return process, streamline administrative tasks, and enhance user experience for both library staff and members.
