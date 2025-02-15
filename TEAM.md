@@ -8,7 +8,7 @@ Below are the profiles of our team members:
 <img src="/images/aidan_ingram.jpg" width="15%" />
 
 - **Project Role**:  
-  - TBD
+  - Backend Developer
 - **Contact Information**:  
   - Email: [aidan.ingram@ku.edu](mailto:aidan.ingram@ku.edu)  
   - Phone: (913) 424-2908
