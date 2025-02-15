@@ -1,6 +1,9 @@
 # 📚 Team SQLibrary Scope Statement
 
-## Project Scope:
+## Our Project Scope Statement:
+The Library Management System (LMS) will streamline library operations by managing collections, memberships, borrowing rules, and transactions for small libraries. It will improve efficiency through a modular, user-friendly database, replacing paper-based systems while generating insightful reports.
+
+## Project Scope in Depth:
 
 ### 1. Items Management:
 The LMS will manage different types of library materials, including:
