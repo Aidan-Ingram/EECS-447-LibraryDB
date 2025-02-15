@@ -1,20 +1,20 @@
-# Team Profiles
+# 💼 Team Profiles
 
 Below are the profiles of our team members:
 
 ---
 
-## Aidan Ingram 
-![Photo](/images/aidan_ingram.jpg)
+## Aidan Ingram
+<img src="/images/aidan_ingram.jpg" width="15%" />
 
+- **Project Role**:  
+  - TBD
 - **Contact Information**:  
-  - Email: [aidan.ingram@ku.edu](mailto:email@example.com)  
+  - Email: [aidan.ingram@ku.edu](mailto:aidan.ingram@ku.edu)  
   - Phone: (913) 424-2908
-
 - **Availability**:  
   - Working hours: MWF | 11:00 - 17:00
   - Time zone: CST (Chicago)
-
 - **Computing Platform Experience**:  
   - Windows
   - Linux
@@ -22,7 +22,6 @@ Below are the profiles of our team members:
   - AWS
   - Docker
   - Jira
-
 - **Programming Language Knowledge**:  
   - Python
   - TS, JS
@@ -30,6 +29,7 @@ Below are the profiles of our team members:
   - Java, NodeJS
   - Lua
   - Haskell
+
 
 ---
 
