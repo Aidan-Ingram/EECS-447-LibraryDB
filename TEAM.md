@@ -75,6 +75,45 @@ Below are the profiles of our team members:
  
 ---
 
+## Kemar Wilson
+<img src="/images/kemar_Wilson.jpg" width="15%" />
+
+- **Project Role**:  
+  - Backend Developer and Tester
+- **Contact Information**:  
+  - Email: [aidan.ingram@ku.edu](mailto:kem.wilson@ku.edu)  
+  - Phone: (913) 293-8333
+- **Availability**:  
+  - Working hours: MWF | 14:00 - 17:00
+  - Time zone: CST (Chicago)
+- **Area of Expertise**:
+  - Network Security
+  - System and Endpoint Security
+  - Cloud Security
+  - Threat Intelligence & Analysis
+  - Digital Forensics & Incident Response
+  - Compliance & Risk Management
+  - Penetration Testing & Ethical Hacking 
+- **Computing Platform Experience**:  
+  - Windows
+  - Linux
+  - MacOS
+  - AWS
+  - Docker
+  - Jira
+- **Programming Language Knowledge**:  
+  - Python
+  - PowerShell
+  - Bash
+  - SQL
+  - TS, JS
+  - C, C++
+  - Java, NodeJS
+  - HTML & CSS
+  - Swift/Objective C
+
+---
+
 *Next member here. Continue the syntax down!*
 
 ---
