@@ -1,7 +1,7 @@
 # 📚 Team SQLibrary Vision Statement & Overview
 
 ## Our Vision Statement:
-The Library Management System (LMS) will streamline library operations by managing collections, memberships, borrowing rules, and transactions for small libraries. It will improve efficiency through a modular, user-friendly database, replacing paper-based systems while generating insightful reports.
+Our vision is to enhance the library experience for both staff and members by providing a simple yet powerful digital solution that improves workflow, supports efficient borrowing, and fosters better resource management in small-scale library environments, where paper has been the long-standing method of conducting business.
 
 ## Project Goal:
 The goal of this project is to develop a **Library Management System (LMS)** that efficiently manages a small library's collection, tracks memberships, enforces borrowing rules, and generates insightful reports. This system aims to replace the traditional paper-based processes, offering a more efficient, digital solution tailored to small-scale libraries.
