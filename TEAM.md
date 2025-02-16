@@ -36,7 +36,7 @@ Below are the profiles of our team members:
 <img src="/images/harry_ahrenholtz.jpg" width="15%" />
 
 - **Project Role**:  
-  - TBD
+  - Database Architect
 - **Contact Information**:  
   - Email: [hahrenholtz@ku.edu](mailto:hahrenholtz@ku.edu)  
   - Phone: (913) 957-2137
