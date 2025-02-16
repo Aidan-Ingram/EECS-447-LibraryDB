@@ -76,7 +76,7 @@ Below are the profiles of our team members:
 ---
 
 ## Kemar Wilson
-<img src="/images/kemar_Wilson.jpg" width="15%" />
+<img src="/images/kemar_wilson.jpg" width="15%" />
 
 - **Project Role**:  
   - Backend Developer and Tester
