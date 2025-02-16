@@ -81,7 +81,7 @@ Below are the profiles of our team members:
 - **Project Role**:  
   - Backend Developer and Tester
 - **Contact Information**:  
-  - Email: [aidan.ingram@ku.edu](mailto:kem.wilson@ku.edu)  
+  - Email: [kem.wilson@ku.edu](mailto:kem.wilson@ku.edu)  
   - Phone: (913) 293-8333
 - **Availability**:  
   - Working hours: MWF | 14:00 - 17:00
