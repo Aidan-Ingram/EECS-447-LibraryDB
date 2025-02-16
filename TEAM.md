@@ -111,6 +111,26 @@ Below are the profiles of our team members:
   - Java, NodeJS
   - HTML & CSS
   - Swift/Objective C
+ 
+---
+## Spencer Rodenberg
+<img src="/images/spencer_rodenberg.jpg" width="15%" />
+
+- **Project Role**:  
+  - Team Admin
+- **Contact Information**:  
+  - Email: [rodenbers@ku.edu](mailto:rodenbers@ku.edu)  
+- **Availability**:  
+  - MWF | 11:00 AM - 5:00 PM CST
+  - TuTr | 2:15 - 4:00 PM CST
+- **Computing Platform Experience**:  
+  - Windows
+  - Linux
+- **Programming Language Knowledge**:  
+  - Python
+  - C, C++, C#
+  - MIPS
+  - Haskell
 
 ---
 
