@@ -134,6 +134,31 @@ Below are the profiles of our team members:
 
 ---
 
+## Devarth Patel
+<img src="/images/Devarth_Patel.jpg" width="15%" />
+
+- **Project Role**:  
+  - Database Designer
+- **Contact Information**:  
+  - Email: [dpate20@ku.edu](mailto:dpate20@ku.edu)  
+- **Availability**:  
+  - M | 9:00 AM - 11:00 PM CST
+  - TuTr | 3:00 - 5:00 PM CST
+- **Computing Platform Experience**:  
+  - Windows
+  - Linux
+  - MacOS
+  - Docker
+  - Jira
+  - Figma
+- **Programming Language Knowledge**:  
+  - Python
+  - C, C++, C#
+  - Haskell
+
+---
+
+
 *Next member here. Continue the syntax down!*
 
 ---
