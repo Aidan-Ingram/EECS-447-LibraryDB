@@ -157,10 +157,3 @@ Below are the profiles of our team members:
   - Haskell
 
 ---
-
-
-*Next member here. Continue the syntax down!*
-
----
-
-
