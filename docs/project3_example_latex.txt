@@ -1,3 +1,6 @@
+%This is the entire code for our project 3 document in Latex, if you want to reproduce it for part 4
+%dump this into a compiler (I'd use overleaf.com since it has other useful templates and is free) and message me if I can help with anything.
+
 \documentclass{article}
 \usepackage{graphicx} % For inserting images later
 \usepackage{array} % For better table formatting
