@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{graphicx} % For inserting images later
+\usepackage{array} % For better table formatting
+\usepackage{hyperref} % For hyperlinks if needed
+\usepackage{tabularx} % Add this in your preamble
+
+
+\title{Library DB Conceptual Modeling}
+\author{Team SQLibrary}
+\date{March 16, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Project Overview}
+This database project is focused on designing an SQL-based Library Management System (LMS) to efficiently manage books, magazines, borrowers, transactions, and overdue monitoring. By replacing traditional paper-based methods, the LMS will enhance organization, improve data accuracy, and streamline daily library operations. It will feature a structured, user-friendly interface that simplifies record-keeping, enforces borrowing policies, and provides automated tracking of overdue materials. Additionally, the system will generate comprehensive reports to assist librarians in decision-making and overall management.
+
+\subsection{Scope}
+The Library Management System (LMS) will oversee various types of materials, such as physical and digital books, as well as magazines. It will facilitate user management, enforce borrowing policies, and track overdue items. The system will regulate borrowing limits according to membership categories, enable reservations, and produce reports. However, it will not incorporate physical checkout mechanisms like barcode scanners or RFID tags, nor will it integrate with external digital content providers.
+
+\subsection{Glossary}
+Below is a list of key terms and acronyms used in this project:
+\begin{itemize}
+    \item \textbf{Library Management System (LMS)}: An architecture created to manage
+library assets, member enrollments, and transaction operations.
+    \item \textbf{Overdue Monitoring}: A device that tracks and records overdue books and
+calculates corresponding fees.
+    \item \textbf{Membership Type}: A classification of customers that identifies the
+borrower ability and charge terms for these customers (for example,
+normal, student, old person (senior)).
+    \item \textbf{Reservation}: A feature allowing clients to place holds on borrowed items
+    \item \textbf{Notifications}: Automated alerts for due dates, overdue items, and reserved book availability
+    \item \textbf{Item}: A generalized category for the objects the library contains, categorized by the upper-case "I" to represent the entity that DM, Magazine, and Book inherit from.
+    \item \textbf{DM}: Shorthand for Digital Media.
+    \item \textbf{ISBN}: International Standard Book Number is a unique identifier assigned to books and other published materials.
+    
+\end{itemize}
+
+\section{Identify ER Modeling Components}
+
+\subsection{Identify Entities}
+List all the major entities that will be part of your database.
+\begin{itemize}
+    \item \textbf{Book}
+    \item \textbf{Digital Media}
+    \item \textbf{Magazine}
+    \item \textbf{Member}
+    \item \textbf{Membership Type}
+    \item \textbf{Loan}
+    \item \textbf{Fine}
+    \item \textbf{Reservation}
+    \item \textbf{Librarian}
+    \item \textbf{Item}
+
+\end{itemize}
+
+\subsection{Define Attributes}
+Attributes and key type/data type specification for each entity. The format is Entity (Attribute (data\_type)). The format for Key and Foreign attributes is \textbf{(key, data\_type)}.
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{Entity} & \textbf{Attributes} \\ 
+        \hline
+        \textbf{Book} & ISBN (\textbf{PK, INT}), Title (STR), Author (STR), Genre (STR), PubYear (INT), Availability (BOOL) \\ 
+        \hline
+        \textbf{Digital Media} & MediaID (\textbf{PK, INT}), Title (STR), Creator (STR), MediaType (STR), Availability (BOOL) \\ 
+        \hline
+        \textbf{Magazine} & IssueID (\textbf{PK, INT}), Title (STR), IssueNumber (INT), PublicationDate (INT), Status (BOOL) \\ 
+        \hline
+        \textbf{Member} & MemberID (\textbf{PK, INT}), Name (STR), Contact (STR), TypeID (\textbf{FK, CHAR}), AccountStatus (STR) \\ 
+        \hline
+        \textbf{Membership Type} & TypeID (\textbf{PK, CHAR}), TypeName (STR), BorrowLimit (INT), LateFeeRate (INT) \\ 
+        \hline
+        \textbf{Loan} & LoanID (\textbf{PK, INT}), MemberID (\textbf{FK, INT}), ItemID (\textbf{FK, INT}), ItemType (ITEM), LoanDate (STR), DueDate (STR), ReturnDate (STR), FineID (\textbf{FK, INT}) \\ 
+        \hline
+        \textbf{Fine} & FineID (\textbf{PK, INT}), LoanID (\textbf{FK, INT}), Amount (INT), PaymentStatus (BOOL) \\ 
+        \hline
+        \textbf{Reservation} & ReservationID (\textbf{PK, INT}), MemberID (\textbf{FK, INT}), ItemID (\textbf{FK, INT}), ItemType (ITEM), RequestDate (STR), Status (BOOL) \\ 
+        \hline
+        \textbf{Librarian} & LibrarianID (\textbf{PK, INT}), Name (STR), Contact (STR), Role (STR) \\ 
+        \hline
+        \textbf{Item} & ItemID (\textbf{PK, INT}), Title (STR), Availability (BOOL) \\ 
+        \hline
+    \end{tabularx}
+    }
+    \caption{Entity Attributes and Data Types}
+\end{table}
+
+
+
+\subsection{Define Relationships}
+Determine how the entities are related to each other, including multiplicity (one-to-one, one-to-many, many-to-many) and constraints. The relationship format is "\textbf{relationship} Entity" or vice versa.
+
+\begin{itemize}
+    \item \textbf{Book}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{is\_an} Item
+        \item \textbf{Multiplicity:} One-to-One (one item can be one book)
+        \item \textbf{Constraints:} PRIMARY KEY (ISBN), unique ISBN, availability could be an ENUM
+    \end{itemize}
+
+    \item \textbf{Digital Media}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{is\_an} Item
+        \item \textbf{Multiplicity:}  One-to-One (one item can be one piece of DM)
+        \item \textbf{Constraints:} PRIMARY KEY (MediaID), unique MediaID, availability could be an ENUM
+    \end{itemize}
+    
+    \item \textbf{Magazine}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{is\_an} Item
+        \item \textbf{Multiplicity:} One-to-One (one item can be one magazine)
+        \item \textbf{Constraints:} PRIMARY KEY (IssueID), unique IssueID, Status could be an ENUM
+    \end{itemize}
+    
+    \item \textbf{Member}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{is\_given} Loan, \textbf{has\_type} Member Type, makes Reservation with \textbf{made\_by}
+        \item \textbf{Multiplicity:} One-to-Many (one member can have many loans), One-to-One (one member can have one type), One-to-One (one member makes the reservation)
+        \item \textbf{Constraints:} PRIMARY KEY (MemberID), references MembershipType.TypeID
+    \end{itemize}
+
+    \item \textbf{Membership Type}
+    \begin{itemize}
+        \item \textbf{Relationships:} Gives type to Member with \textbf{has\_type}
+        \item \textbf{Multiplicity:} One-to-One (one member has one type)
+        \item \textbf{Constraints:} PRIMARY KEY (TypeID), BorrowLimit could be TINYINT
+    \end{itemize}
+
+    \item \textbf{Loan}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{processed\_by} Librarian, \textbf{incurs} Fine, \textbf{includes} Item, and gives loan to Member with \textbf{is\_given}
+        \item \textbf{Multiplicity:} Many-to-One (many loans are processed by one Librarian), One-to-One (one loan can incur one associated Fine), One-to-Many (one Loan includes many Items), Many-to-One (many Loans can be given to one Member)
+        \item \textbf{Constraints:} PRIMARY KEY (LoanID), references MemberID \& FineID
+    \end{itemize}
+
+    \item \textbf{Fine}
+    \begin{itemize}
+        \item \textbf{Relationships:} Received from a Loan with \textbf{incurs}
+        \item \textbf{Multiplicity:} One-to-One (one loan incurs one fine at a time)
+        \item \textbf{Constraints:} PRIMARY KEY (FineID), references LoanID, PaymentStatus could be an ENUM
+    \end{itemize}
+
+    \item \textbf{Reservation}
+    \begin{itemize}
+        \item \textbf{Relationships:} \textbf{made\_by} Member, \textbf{reserves} Item
+        \item \textbf{Multiplicity:} One-to-One (one Member has one Reservation at a time), One to Many (one Reservation reserves many Items)
+        \item \textbf{Constraints:} PRIMARY KEY (ReservationID), references MemberID
+    \end{itemize}
+
+    \item \textbf{Librarian}
+    \begin{itemize}
+        \item \textbf{Relationships:} Handles Loans with \textbf{processed\_by}
+        \item \textbf{Multiplicity:} One-to-Many (one Librarian processes many Loans)
+        \item \textbf{Constraints:} PRIMARY KEY (LibrarianID), Role could be ENUM('Admin', 'Staff')
+    \end{itemize}
+
+    \item \textbf{Item}
+    \begin{itemize}
+        \item \textbf{Relationships:} Is obtained by a Loan with \textbf{includes}, or by Reservation with \textbf{reserves}
+        \item \textbf{Multiplicity:} Many-to-One (many Items are in one Loan), Many-to-One (many Items are in one Reservation)
+        \item \textbf{Constraints:} PRIMARY KEY (Item ID), unique ITEM ID
+    \end{itemize}
+
+
+\end{itemize}
+
+
+\subsection{ER Diagram}
+Below is the ER diagram for the library database:
+\begin{center}
+    \textbf{Our ER Diagram is on the next page, we didn't want to compress it too thoroughly.}
+\end{center}
+
+\end{document}
