@@ -126,4 +126,4 @@ ALTER TABLE `Fine` ADD FOREIGN KEY (`LoanID`) REFERENCES `Loan` (`LoanID`);
 
 -- Reservation → Member, Item
 ALTER TABLE `Reservation` ADD FOREIGN KEY (`MemberID`) REFERENCES `Member` (`MemberID`);
-ALTER TABLE `Reservation` ADD FOREIGN KEY (`ItemID`) REFERENCES `Item` (`ItemID`);-- Temporarily empty until we establish the project further
+ALTER TABLE `Reservation` ADD FOREIGN KEY (`ItemID`) REFERENCES `Item` (`ItemID`);
