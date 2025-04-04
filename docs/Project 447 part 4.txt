@@ -1,0 +1,24 @@
+Project 447 part 4
+
+1.1 Project Overview
+
+This database project focuses on designing a robust SQL-based Library Management System (LMS) that efficiently manages books, magazines, borrowers, transactions, and overdue monitoring. With the development of a relational schema, the project now emphasizes the logical structuring of data using entity-relationship (ER) modeling and relational mapping techniques. The system ensures data integrity through well-defined primary keys, foreign keys, and functional dependencies. By implementing a structured relational schema, the LMS enhances data accuracy, optimizes query performance, and maintains referential integrity, enabling streamlined library operations and improved decision-making capabilities for librarians.
+
+1.2 Scope
+
+The Library Management System (LMS) will manage various types of library materials, including physical and digital books, magazines, and user accounts. The system will enforce borrowing policies, track overdue items, regulate borrowing limits according to membership categories, enable reservations, and generate reports. In this phase, the focus is on mapping the conceptual ER model to a relational schema, defining attributes, primary keys, foreign keys, and establishing functional dependencies. The system will maintain strict normalization principles to minimize redundancy and ensure efficiency. However, it will not incorporate physical checkout mechanisms like barcode scanners or RFID tags, nor will it integrate with external content providers.
+
+1.3 Glossary
+
+Relational Schema: The structured representation of a database that defines relations (tables), attributes, and constraints.
+
+Primary Key: A unique identifier for each record in a table.
+
+Foreign Key: A field in one table that references the primary key of another table, ensuring referential integrity.
+
+Functional Dependency: A constraint that describes the relationship between attributes in a relation.
+
+Normalization: The process of organizing a database to reduce redundancy and improve data integrity.
+
+
+3NF (Third Normal Form): A normalization form ensuring that all attributes are functionally dependent only on the primary key and not on any non-key attributes.
