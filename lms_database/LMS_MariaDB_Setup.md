@@ -1,25 +1,26 @@
-
 # Library Management System (LMS) - Full Setup Guide in MariaDB
 
-**Prepared by:** Kemar Wilson  
 **Team:** SQLibrary  
-**Project:** 447 Part 4
+**Project:** 447 Part 5
 
 ---
 
 ## Step 1: Install and Start MariaDB (macOS with Homebrew)
+
 ```bash
 brew install mariadb
 brew services start mariadb
 ```
 
 ## Step 2: Secure MariaDB and Log In
+
 ```bash
 mysql_secure_installation
 mysql -u root -p
 ```
 
 ## Step 3: Create the LMS Database
+
 ```sql
 CREATE DATABASE LMS;
 USE LMS;
@@ -28,6 +29,7 @@ USE LMS;
 ## Step 4: Create Tables
 
 ### Book
+
 ```sql
 CREATE TABLE Book (
     BookID INT PRIMARY KEY AUTO_INCREMENT,
@@ -40,6 +42,7 @@ CREATE TABLE Book (
 ```
 
 ### DigitalMedia
+
 ```sql
 CREATE TABLE DigitalMedia (
     MediaID INT PRIMARY KEY AUTO_INCREMENT,
@@ -51,6 +54,7 @@ CREATE TABLE DigitalMedia (
 ```
 
 ### Magazine
+
 ```sql
 CREATE TABLE Magazine (
     MagazineID INT PRIMARY KEY AUTO_INCREMENT,
@@ -62,6 +66,7 @@ CREATE TABLE Magazine (
 ```
 
 ### Member
+
 ```sql
 CREATE TABLE Member (
     MemberID INT PRIMARY KEY AUTO_INCREMENT,
@@ -73,6 +78,7 @@ CREATE TABLE Member (
 ```
 
 ### MembershipType
+
 ```sql
 CREATE TABLE MembershipType (
     TypeID VARCHAR(5) PRIMARY KEY,
@@ -83,6 +89,7 @@ CREATE TABLE MembershipType (
 ```
 
 ### Loan
+
 ```sql
 CREATE TABLE Loan (
     LoanID INT PRIMARY KEY AUTO_INCREMENT,
@@ -98,6 +105,7 @@ CREATE TABLE Loan (
 ```
 
 ### Fine
+
 ```sql
 CREATE TABLE Fine (
     FineID INT PRIMARY KEY AUTO_INCREMENT,
@@ -108,6 +116,7 @@ CREATE TABLE Fine (
 ```
 
 ### Reservation
+
 ```sql
 CREATE TABLE Reservation (
     ReservationID INT PRIMARY KEY AUTO_INCREMENT,
@@ -120,6 +129,7 @@ CREATE TABLE Reservation (
 ```
 
 ### Librarian
+
 ```sql
 CREATE TABLE Librarian (
     LibrarianID INT PRIMARY KEY AUTO_INCREMENT,
@@ -130,6 +140,7 @@ CREATE TABLE Librarian (
 ```
 
 ## Step 5: Create Admin User for Remote Access
+
 ```sql
 CREATE USER 'lms_admin'@'%' IDENTIFIED BY 'Teamsqllibrary';
 GRANT ALL PRIVILEGES ON *.* TO 'lms_admin'@'%' WITH GRANT OPTION;
@@ -137,16 +148,19 @@ FLUSH PRIVILEGES;
 ```
 
 ## Step 6: Expose MariaDB to Teammates via Ngrok
+
 ```bash
 ngrok tcp 3306
 ```
 
 Ngrok output:
+
 ```
 Forwarding tcp://6.tcp.ngrok.io:12368 -> localhost:3306
 ```
 
 Teammate Connection:
+
 - Host: 6.tcp.ngrok.io
 - Port: 12368
 - Username: lms_admin
