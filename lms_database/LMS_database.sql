@@ -26,9 +26,9 @@ DROP TABLE IF EXISTS `Book`;
 CREATE TABLE `Book` (
   `ItemID` int(11) NOT NULL,
   `Title` varchar(255) DEFAULT NULL,
-  `Author` varchar(100) DEFAULT NULL,
-  `Genre` varchar(50) DEFAULT NULL,
-  `PubYear` int(11) DEFAULT NULL CHECK (`PubYear` >= 1450),
+  `Author` varchar(255) DEFAULT NULL,
+  `Genre` varchar(255) DEFAULT NULL,
+  `PubYear` int(11) DEFAULT NULL,
   `Availability` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`ItemID`),
   CONSTRAINT `book_ibfk_1` FOREIGN KEY (`ItemID`) REFERENCES `Item` (`ItemID`)
@@ -54,8 +54,8 @@ DROP TABLE IF EXISTS `DigitalMedia`;
 CREATE TABLE `DigitalMedia` (
   `ItemID` int(11) NOT NULL,
   `Title` varchar(255) DEFAULT NULL,
-  `MediaType` varchar(100) DEFAULT NULL,
-  `Creator` varchar(100) DEFAULT NULL,
+  `MediaType` varchar(255) DEFAULT NULL,
+  `Creator` varchar(255) DEFAULT NULL,
   `Availability` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`ItemID`),
   CONSTRAINT `digitalmedia_ibfk_1` FOREIGN KEY (`ItemID`) REFERENCES `Item` (`ItemID`)
@@ -79,11 +79,13 @@ DROP TABLE IF EXISTS `Fine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Fine` (
-  `FineID` int(11) NOT NULL,
+  `FineID` int(11) NOT NULL AUTO_INCREMENT,
   `LoanID` int(11) DEFAULT NULL,
-  `Amount` int(11) DEFAULT NULL CHECK (`Amount` >= 0),
+  `Amount` int(11) DEFAULT NULL,
   `PaymentStatus` enum('Paid','Unpaid') DEFAULT NULL,
-  PRIMARY KEY (`FineID`)
+  PRIMARY KEY (`FineID`),
+  KEY `LoanID` (`LoanID`),
+  CONSTRAINT `fine_ibfk_1` FOREIGN KEY (`LoanID`) REFERENCES `Loan` (`LoanID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -104,7 +106,7 @@ DROP TABLE IF EXISTS `Item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Item` (
-  `ItemID` int(11) NOT NULL,
+  `ItemID` int(11) NOT NULL AUTO_INCREMENT,
   `Title` varchar(255) DEFAULT NULL,
   `Availability` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`ItemID`)
@@ -128,9 +130,9 @@ DROP TABLE IF EXISTS `Librarian`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Librarian` (
-  `LibrarianID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Contact` varchar(100) DEFAULT NULL,
+  `LibrarianID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Contact` varchar(255) DEFAULT NULL,
   `Role` enum('Admin','Staff') DEFAULT NULL,
   PRIMARY KEY (`LibrarianID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -153,10 +155,10 @@ DROP TABLE IF EXISTS `Loan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Loan` (
-  `LoanID` int(11) NOT NULL,
+  `LoanID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) DEFAULT NULL,
   `ItemID` int(11) DEFAULT NULL,
-  `ItemType` varchar(50) DEFAULT NULL,
+  `ItemType` varchar(255) DEFAULT NULL,
   `LoanDate` date DEFAULT NULL,
   `DueDate` date DEFAULT NULL,
   `ReturnDate` date DEFAULT NULL,
@@ -194,7 +196,7 @@ CREATE TABLE `Magazine` (
   `ItemID` int(11) NOT NULL,
   `Title` varchar(255) DEFAULT NULL,
   `IssueNumber` int(11) DEFAULT NULL,
-  `PublicationDate` int(11) DEFAULT NULL CHECK (`PublicationDate` >= 1660),
+  `PublicationDate` int(11) DEFAULT NULL,
   `Status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`ItemID`),
   CONSTRAINT `magazine_ibfk_1` FOREIGN KEY (`ItemID`) REFERENCES `Item` (`ItemID`)
@@ -218,10 +220,10 @@ DROP TABLE IF EXISTS `Member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Member` (
-  `MemberID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Contact` varchar(100) DEFAULT NULL,
-  `TypeID` char(2) DEFAULT NULL,
+  `MemberID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Contact` varchar(255) DEFAULT NULL,
+  `TypeID` char(1) DEFAULT NULL,
   `AccountStatus` enum('Active','Suspended','Closed') DEFAULT NULL,
   PRIMARY KEY (`MemberID`),
   KEY `TypeID` (`TypeID`),
@@ -246,10 +248,10 @@ DROP TABLE IF EXISTS `MembershipType`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `MembershipType` (
-  `TypeID` char(2) NOT NULL,
-  `TypeName` varchar(100) DEFAULT NULL,
-  `BorrowLimit` int(11) DEFAULT NULL CHECK (`BorrowLimit` >= 0),
-  `LateFeeRate` int(11) DEFAULT NULL CHECK (`LateFeeRate` >= 0),
+  `TypeID` char(1) NOT NULL,
+  `TypeName` varchar(255) DEFAULT NULL,
+  `BorrowLimit` int(11) DEFAULT NULL,
+  `LateFeeRate` int(11) DEFAULT NULL,
   PRIMARY KEY (`TypeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -271,10 +273,10 @@ DROP TABLE IF EXISTS `Reservation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Reservation` (
-  `ReservationID` int(11) NOT NULL,
+  `ReservationID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) DEFAULT NULL,
   `ItemID` int(11) DEFAULT NULL,
-  `ItemType` varchar(50) DEFAULT NULL,
+  `ItemType` varchar(255) DEFAULT NULL,
   `RequestDate` date DEFAULT NULL,
   `Status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`ReservationID`),
@@ -303,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-04-22 17:30:50
+-- Dump completed on 2025-04-22 18:02:35
