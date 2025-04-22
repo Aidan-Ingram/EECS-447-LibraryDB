@@ -139,6 +139,8 @@ CREATE TABLE Librarian (
 );
 ```
 
+## Optional
+
 ## Step 5: Create Admin User for Remote Access
 
 ```sql
