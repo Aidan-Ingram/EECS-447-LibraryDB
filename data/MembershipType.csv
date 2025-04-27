@@ -1,5 +1,0 @@
-TypeID,TypeName,BorrowLimit,LateFeeRate
-P,Premium,10,2
-B,Basic,3,8
-S,Standard,5,6
-A,Advanced,7,4
